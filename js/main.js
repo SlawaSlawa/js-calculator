@@ -31,3 +31,7 @@ function getResult(vomiting) {
 function renderInInput(str) {
 	calculatorInput.value = str;
 }
+
+function clearInput() {
+	calculatorInput.value = '';
+}
