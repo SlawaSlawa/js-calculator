@@ -21,6 +21,11 @@ function createVomiting(data) {
 				string += data;
 				renderInInput(string);
 		}
+		if (data === 'c') {
+			string = '';
+			clearInput();
+		}
+
 }
 
 function getResult(vomiting) {
