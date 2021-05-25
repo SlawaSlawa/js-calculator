@@ -45,7 +45,6 @@ function getResult(vomiting) {
 }
 
 function renderInInput(str) {
-	console.log(str);
 	calculatorInput.value = str;
 }
 
