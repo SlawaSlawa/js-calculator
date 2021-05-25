@@ -19,7 +19,6 @@ function createVomiting(data) {
 			renderInInput(string);
 		}else if (data === '=') {
 			renderInInput(getResult(string));
-			string = '';
 		}else if (string === '' && data === '*') {
 			string = '';
 			renderInInput(string);
@@ -30,8 +29,8 @@ function createVomiting(data) {
 			string = '';
 			renderInInput(string);
 		}else {
-				string += data;
-				renderInInput(string);
+			string += data;
+			renderInInput(string);
 		}
 		if (data === 'c') {
 			string = '';
