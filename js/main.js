@@ -14,9 +14,6 @@ function handlerBtn(evt) {
 }
 
 function createVomiting(data) {
-	// if (data.indexOf('+')) {
-
-	// }
 		if (string === '' && data === '=') {
 			string = '';
 			renderInInput(string);
@@ -31,6 +28,9 @@ function createVomiting(data) {
 		}else if (string === '' && data === '/') {
 			string = '';
 			renderInInput(string);
+		}else if (string === '' && data === '.') {
+			string = '';
+			renderInInput(string);
 		}else {
 			string += data;
 			renderInInput(string);
@@ -40,98 +40,117 @@ function createVomiting(data) {
 			clearInput();
 		}
 
+
+		if (string.indexOf('+') > 0 && string[string.indexOf('++')]) {
+			string = string.split('');
+			string.pop();
+			string = string.join('');
+			renderInInput(string);
+		}
+
+		if (string.indexOf('-') > 0 && string[string.indexOf('--')]) {
+			string = string.split('');
+			string.pop();
+			string = string.join('');
+			renderInInput(string);
+		}
+
+		if (string.indexOf('*') > 0 && string[string.indexOf('**')]) {
+			string = string.split('');
+			string.pop();
+			string = string.join('');
+			renderInInput(string);
+		}
+
+		if (string.indexOf('/') > 0 && string[string.indexOf('//')]) {
+			string = string.split('');
+			string.pop();
+			string = string.join('');
+			renderInInput(string);
+		}
+
+		if (string.indexOf('.') > 0 && string[string.indexOf('..')]) {
+			string = string.split('');
+			string.pop();
+			string = string.join('');
+			renderInInput(string);
+		}
 }
 
 function keyboardHandler(key) {
 	console.log(key);
+	key.preventDefault();
 	key = key.key;
+
 	switch(key) {
   	case '0':
-		console.log(key);
 		createVomiting(key);
     break
 
   	case '1':
-		console.log(key);
 		createVomiting(key);
     break;
 
     case '2':
-		console.log(key);
 		createVomiting(key);
     break;
 
     case '3':
-		console.log(key);
 		createVomiting(key);
     break;
 
     case '4':
-		console.log(key);
 		createVomiting(key);
     break;
 
     case '5':
-		console.log(key);
 		createVomiting(key);
     break;
 
     case '6':
-		console.log(key);
 		createVomiting(key);
     break;
 
     case '7':
-		console.log(key);
 		createVomiting(key);
     break;
 
     case '8':
-		console.log(key);
 		createVomiting(key);
     break;
 
     case '9':
-		console.log(key);
 		createVomiting(key);
     break;
 
     case '+':
-		console.log(key);
 		createVomiting(key);
     break;
 
     case '-':
-		console.log(key);
 		createVomiting(key);
     break;
 
     case '/':
-		console.log(key);
 		createVomiting(key);
     break;
 
     case '*':
-		console.log(key);
 		createVomiting(key);
     break;
 
     case '.':
-		console.log(key);
 		createVomiting(key);
     break;
 
     case 'c':
-		console.log(key);
 		createVomiting(key);
     break;
 
     case '=':
-		console.log(key);
 		createVomiting(key);
 
     case 'Enter':
-		console.log(key);
 		createVomiting('=');
     break;
 
@@ -152,4 +171,4 @@ function clearInput() {
 	calculatorInput.value = '';
 }
 
-window.addEventListener('keypress', keyboardHandler);
+calculatorInput.addEventListener('keypress', keyboardHandler);
