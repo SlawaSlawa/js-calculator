@@ -20,6 +20,15 @@ function createVomiting(data) {
 		}else if (data === '=') {
 			renderInInput(getResult(string));
 			string = '';
+		}else if (string === '' && data === '*') {
+			string = '';
+			renderInInput(string);
+		}else if (string === '' && data === '+') {
+			string = '';
+			renderInInput(string);
+		}else if (string === '' && data === '/') {
+			string = '';
+			renderInInput(string);
 		}else {
 				string += data;
 				renderInInput(string);
