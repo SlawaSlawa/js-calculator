@@ -14,7 +14,10 @@ function handlerBtn(evt) {
 }
 
 function createVomiting(data) {
-		if (data === '=') {
+		if (string === '' && data === '=') {
+			string = '';
+			renderInInput(string);
+		}else if (data === '=') {
 			renderInInput(getResult(string));
 			string = '';
 		}else {
@@ -34,6 +37,7 @@ function getResult(vomiting) {
 }
 
 function renderInInput(str) {
+	console.log(str);
 	calculatorInput.value = str;
 }
 
